@@ -19,8 +19,8 @@ class TestSet(unittest.TestCase):
         self.assertEquals(assign_average.switch_average('E'), 25)
 
     def test_for_no_key(self):
-        self.assertRaises(assign_average.switch_average(), ValueError)
-
+        with self.assertRaises(KeyError):
+            assign_average.switch_average('F')
 
 if __name__ == '__main__':
     unittest.main()
